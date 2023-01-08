@@ -40,16 +40,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM 200
 #define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
-// #define TAPPING_FORCE_HOLD
+#define TAPPING_FORCE_HOLD
+// #define RETRO_TAPPING
 
 // Combo settings
-#define COMBO_TERM  20
-#define COMBO_COUNT 19
+#define COMBO_TERM 20
+#define COMBO_COUNT 24
 
 // Underglow configuration
 #ifdef RGBLIGHT_ENABLE
-  #define RGBLIGHT_ANIMATIONS
-  #define RGBLIGHT_HUE_STEP 8
-  #define RGBLIGHT_SAT_STEP 8
-  #define RGBLIGHT_VAL_STEP 8
+#    define RGBLIGHT_ANIMATIONS
+#    define RGBLIGHT_HUE_STEP 8
+#    define RGBLIGHT_SAT_STEP 8
+#    define RGBLIGHT_VAL_STEP 8
 #endif
