@@ -9,15 +9,15 @@
 // entirely and just use numbers.
 
 enum ferris_layers {
-    _QWERTY, 
+    _QWERTY,
     _GAMING,
     // Colemak
-    _LOWER, 
-    _RAISE, 
-    _ADJUST, 
-    _SYMBOLS, 
-    _MULTIMEDIA, 
-    _MOUSE, 
+    _LOWER,
+    _RAISE,
+    _ADJUST,
+    _SYMBOLS,
+    _MULTIMEDIA,
+    _MOUSE,
 };
 
 enum combos {
@@ -54,6 +54,27 @@ enum combos {
 
     // Gaming
     UIOP_GAMING_LAYER,
+
+    // Experiments
+    WS_GRV,
+    ED_TAB,
+    RF_CAPS,
+    TG_MINS,
+
+    SX_APP,
+    DC_BSLS,
+    FV_DEL,
+    GB_QUOT,
+
+    YH_EQL,
+    UJ_CAPS,
+    IK_LBRC,
+    OL_RBRC,
+
+    HN_QUOT,
+    JM_BSPC,
+    KCMM_BSLS,
+    LDOT_APP,
 };
 
 #define MULTIMEDIA_Q LT(_MULTIMEDIA, KC_Q)
@@ -95,7 +116,6 @@ enum combos {
 // gaming
 #define RAISE_ESC LT(_RAISE, KC_ESC)
 
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY]     = LAYOUT_split_3x5_2(MULTIMEDIA_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, MULTIMEDIA_P, LGUI_A, LALT_S, LCTL_D, LSFT_F, SYMBOLS_G, SYMBOLS_H, RSFT_J, RCTL_K, RALT_L, RGUI_SCLN, MOUSE_Z, KC_X, RAISE_C, LOWER_V, MEH_B, MEH_N, LOWER_M, RAISE_COMM, KC_DOT, MOUSE_SLSH, RAISE_SPACE, LOWER_TAB, LOWER_ENTER, RAISE_BSPC),
     [_GAMING]     = LAYOUT_split_3x5_2(KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, MULTIMEDIA_P, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_SPC, RAISE_ESC, LOWER_ENTER, RAISE_BSPC),
@@ -133,11 +153,35 @@ const uint16_t PROGMEM mcmm_combo[]   = {LOWER_M, RAISE_COMM, COMBO_END};
 const uint16_t PROGMEM cmmdot_combo[] = {RAISE_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM mdot_combo[]   = {LOWER_M, KC_DOT, COMBO_END};
 
+// Mouse
 const uint16_t PROGMEM gh_combo[]      = {SYMBOLS_G, SYMBOLS_H, COMBO_END};
 const uint16_t PROGMEM zsdf_combo[]    = {MOUSE_Z, LALT_S, LCTL_D, LSFT_F, COMBO_END};
 const uint16_t PROGMEM slshjkl_combo[] = {MOUSE_SLSH, RSFT_J, RCTL_K, RALT_L, COMBO_END};
 
+// Gaming
 const uint16_t PROGMEM uiop_combo[] = {KC_U, KC_I, KC_O, MULTIMEDIA_P, COMBO_END};
+
+// Experiments
+const uint16_t PROGMEM ws_combo[] = {KC_W, LALT_S, COMBO_END};
+const uint16_t PROGMEM ed_combo[] = {KC_E, LCTL_D, COMBO_END};
+const uint16_t PROGMEM rf_combo[] = {KC_R, LSFT_F, COMBO_END};
+const uint16_t PROGMEM tg_combo[] = {KC_T, SYMBOLS_G, COMBO_END};
+
+const uint16_t PROGMEM sx_combo[] = {LALT_S, KC_X, COMBO_END};
+const uint16_t PROGMEM dc_combo[] = {LCTL_D, RAISE_C, COMBO_END};
+const uint16_t PROGMEM fv_combo[] = {LSFT_F, LOWER_V, COMBO_END};
+const uint16_t PROGMEM gb_combo[] = {SYMBOLS_G, MEH_B, COMBO_END};
+
+const uint16_t PROGMEM yh_combo[] = {KC_Y, SYMBOLS_H, COMBO_END};
+const uint16_t PROGMEM uj_combo[] = {KC_U, RSFT_J, COMBO_END};
+const uint16_t PROGMEM ik_combo[] = {KC_I, RCTL_K, COMBO_END};
+const uint16_t PROGMEM ol_combo[] = {KC_O, RALT_L, COMBO_END};
+
+const uint16_t PROGMEM hn_combo[] = {SYMBOLS_H, MEH_N, COMBO_END};
+const uint16_t PROGMEM jm_combo[] = {RSFT_J, LOWER_M, COMBO_END};
+const uint16_t PROGMEM kcmm_combo[] = {RCTL_K, RAISE_COMM, COMBO_END};
+const uint16_t PROGMEM ldot_combo[] = {RALT_L, KC_DOT, COMBO_END};
+
 
 combo_t key_combos[COMBO_COUNT] = {
     [DF_ESC]   = COMBO(df_combo, KC_ESC),
@@ -171,7 +215,29 @@ combo_t key_combos[COMBO_COUNT] = {
     [ZSDF_MOUSE_LAYER]    = COMBO(zsdf_combo, DF(_MOUSE)),
     [SLSHJKL_MOUSE_LAYER] = COMBO(slshjkl_combo, DF(_MOUSE)),
 
+    // Gaming
     [UIOP_GAMING_LAYER] = COMBO(uiop_combo, TG(_GAMING)),
+
+    // Experiments
+    [WS_GRV] = COMBO(ws_combo, KC_GRV),
+    [ED_TAB] = COMBO(ed_combo, KC_TAB),
+    [RF_CAPS] = COMBO(rf_combo, KC_CAPS),
+    [TG_MINS] = COMBO(tg_combo, KC_MINS),
+
+    [SX_APP] = COMBO(sx_combo, KC_APP),
+    [DC_BSLS] = COMBO(dc_combo, KC_BSLS),
+    [FV_DEL] = COMBO(fv_combo, KC_DEL),
+    [GB_QUOT] = COMBO(gb_combo, KC_QUOT),
+
+    [YH_EQL] = COMBO(yh_combo, KC_EQL),
+    [UJ_CAPS] = COMBO(uj_combo, KC_CAPS),
+    [IK_LBRC] = COMBO(ik_combo, KC_LBRC),
+    [OL_RBRC] = COMBO(ol_combo, KC_RBRC),
+
+    [HN_QUOT] = COMBO(hn_combo, KC_QUOT),
+    [JM_BSPC] = COMBO(jm_combo, KC_BSPC),
+    [KCMM_BSLS] = COMBO(kcmm_combo, KC_BSLS),
+    [LDOT_APP] = COMBO(ldot_combo, KC_APP),
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
