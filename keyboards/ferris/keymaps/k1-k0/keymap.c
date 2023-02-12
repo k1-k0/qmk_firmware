@@ -56,25 +56,25 @@ enum combos {
     UIOP_GAMING_LAYER,
 
     // Experiments
-    WS_GRV,
-    ED_TAB,
-    RF_CAPS,
-    TG_MINS,
+    WS_APP,
+    ED_BSLS,
+    RF_MINS,
+    TG_PSCR,
 
-    SX_APP,
-    DC_BSLS,
-    FV_DEL,
-    GB_QUOT,
+    SX_GRV,
+    DC_TAB,
+    FV_QUOT,
+    GB_DEL,
 
-    YH_EQL,
-    UJ_CAPS,
-    IK_LBRC,
-    OL_RBRC,
+    YH_PSCR,
+    UJ_EQL,
+    IK_BSLS,
+    OL_APP,
 
-    HN_QUOT,
-    JM_BSPC,
-    KCMM_BSLS,
-    LDOT_APP,
+    HN_BSPC,
+    JM_QUOT,
+    KCMM_LBRC,
+    LDOT_RBRC,
 };
 
 #define MULTIMEDIA_Q LT(_MULTIMEDIA, KC_Q)
@@ -117,14 +117,55 @@ enum combos {
 #define RAISE_ESC LT(_RAISE, KC_ESC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_QWERTY]     = LAYOUT_split_3x5_2(MULTIMEDIA_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, MULTIMEDIA_P, LGUI_A, LALT_S, LCTL_D, LSFT_F, SYMBOLS_G, SYMBOLS_H, RSFT_J, RCTL_K, RALT_L, RGUI_SCLN, MOUSE_Z, KC_X, RAISE_C, LOWER_V, MEH_B, MEH_N, LOWER_M, RAISE_COMM, KC_DOT, MOUSE_SLSH, RAISE_SPACE, LOWER_TAB, LOWER_ENTER, RAISE_BSPC),
-    [_GAMING]     = LAYOUT_split_3x5_2(KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, MULTIMEDIA_P, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_SPC, RAISE_ESC, LOWER_ENTER, RAISE_BSPC),
-    [_LOWER]      = LAYOUT_split_3x5_2(KC_PSLS, KC_AMPR, KC_ASTR, KC_LPRN, KC_PMNS, KC_PENT, KC_P7, KC_P8, KC_P9, KC_PCMM, KC_PAST, KC_DLR, KC_PERC, KC_CIRC, KC_PPLS, KC_NUM, RSFT_T(KC_P4), RCTL_T(KC_P5), RALT_T(KC_P6), RGUI_T(KC_PEQL), KC_RPRN, KC_EXLM, KC_AT, KC_HASH, KC_EQL, KC_P0, KC_P1, KC_P2, KC_P3, KC_PDOT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-    [_RAISE]      = LAYOUT_split_3x5_2(KC_SLSH, KC_7, KC_8, KC_9, KC_MINS, KC_ENT, KC_INS, KC_HOME, KC_PGUP, KC_PSCR, LGUI_T(KC_PAST), LALT_T(KC_4), LCTL_T(KC_5), LSFT_T(KC_6), KC_PLUS, KC_LEFT, RSFT_T(KC_DOWN), RCTL_T(KC_UP), RALT_T(KC_RGHT), RGUI_T(KC_APP), KC_0, KC_1, KC_2, KC_3, KC_EQL, KC_ESC, KC_DEL, KC_END, KC_PGDN, KC_NUM, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-    [_ADJUST]     = LAYOUT_split_3x5_2(KC_PSCR, KC_F7, KC_F8, KC_F9, KC_F10, KC_ENT, KC_INS, KC_HOME, KC_PGUP, DB_TOGG, LGUI_T(KC_SCRL), LALT_T(KC_F4), LCTL_T(KC_F5), LSFT_T(KC_F6), KC_F11, KC_BSPC, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, KC_PAUS, KC_F1, KC_F2, KC_F3, KC_F12, KC_ESC, KC_DEL, KC_END, KC_PGDN, QK_BOOT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-    [_SYMBOLS]    = LAYOUT_split_3x5_2(KC_SLSH, KC_AMPR, KC_ASTR, KC_TILD, KC_DQUO, KC_PIPE, KC_COLN, KC_ASTR, KC_SCLN, KC_QUES, KC_SCLN, KC_COLN, KC_EQL, KC_MINS, KC_QUOT, KC_BSLS, KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, KC_LT, KC_GT, KC_PPLS, KC_UNDS, KC_GRV, KC_SLSH, KC_LT, KC_GT, KC_LCBR, KC_RCBR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-    [_MULTIMEDIA] = LAYOUT_split_3x5_2(KC_SCRL, KC_NUM, KC_BRIU, KC_BRID, KC_CAPS, KC_CAPS, KC_BRID, KC_BRIU, KC_NUM, KC_SCRL, KC_MPLY, KC_MNXT, KC_VOLU, KC_VOLD, KC_MPRV, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MPLY, KC_EXEC, KC_HELP, KC_PAUS, KC_MUTE, KC_MSTP, KC_MSTP, KC_MUTE, KC_PAUS, KC_HELP, KC_EXEC, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-    [_MOUSE]      = LAYOUT_split_3x5_2(KC_BTN5, KC_BTN2, KC_BTN3, KC_BTN1, KC_BTN4, KC_BTN4, KC_BTN1, KC_BTN3, KC_BTN2, KC_BTN5, KC_ACL0, KC_MS_R, KC_MS_U, KC_MS_D, KC_MS_L, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_ACL0, RESET_2_QWERTY, KC_WH_R, KC_WH_U, KC_WH_D, KC_WH_L, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, RESET_2_QWERTY, KC_LOCK, KC_ACL2, KC_ACL2, KC_LOCK),
+    [_QWERTY] = LAYOUT_split_3x5_2(
+        MULTIMEDIA_Q, KC_W     , KC_E       , KC_R      , KC_T     , KC_Y     , KC_U   , KC_I      , KC_O  , MULTIMEDIA_P,
+        LGUI_A      , LALT_S   , LCTL_D     , LSFT_F    , SYMBOLS_G, SYMBOLS_H, RSFT_J , RCTL_K    , RALT_L, RGUI_SCLN,
+        MOUSE_Z     , KC_X     , RAISE_C    , LOWER_V   , MEH_B    , MEH_N    , LOWER_M, RAISE_COMM, KC_DOT, MOUSE_SLSH,
+        RAISE_SPACE , LOWER_TAB, LOWER_ENTER, RAISE_BSPC
+    ),
+    [_GAMING] = LAYOUT_split_3x5_2(
+        KC_Q  , KC_W     , KC_E       , KC_R      , KC_T,           KC_Y, KC_U, KC_I   , KC_O  , MULTIMEDIA_P,
+        KC_A  , KC_S     , KC_D       , KC_F      , KC_G,           KC_H, KC_J, KC_K   , KC_L  , KC_SCLN,
+        KC_Z  , KC_X     , KC_C       , KC_V      , KC_B,           KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
+        KC_SPC, RAISE_ESC, LOWER_ENTER, RAISE_BSPC
+    ),
+    [_LOWER] = LAYOUT_split_3x5_2(
+        KC_PSLS, KC_AMPR, KC_ASTR, KC_LPRN, KC_PMNS,                KC_PENT, KC_P7        , KC_P8        , KC_P9        , KC_PCMM,
+        KC_PAST, KC_DLR , KC_PERC, KC_CIRC, KC_PPLS,                KC_NUM , RSFT_T(KC_P4), RCTL_T(KC_P5), RALT_T(KC_P6), RGUI_T(KC_PEQL),
+        KC_RPRN, KC_EXLM, KC_AT  , KC_HASH, KC_EQL ,                KC_P0  , KC_P1        , KC_P2        , KC_P3        , KC_PDOT,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+    [_RAISE]      = LAYOUT_split_3x5_2(
+        KC_SLSH        , KC_7        , KC_8        , KC_9        , KC_MINS,             KC_ENT , KC_INS         , KC_HOME      , KC_PGUP        , KC_PSCR,
+        LGUI_T(KC_PAST), LALT_T(KC_4), LCTL_T(KC_5), LSFT_T(KC_6), KC_PLUS,             KC_LEFT, RSFT_T(KC_DOWN), RCTL_T(KC_UP), RALT_T(KC_RGHT), RGUI_T(KC_APP),
+        KC_0           , KC_1        , KC_2        , KC_3        , KC_EQL ,             KC_ESC , KC_DEL         , KC_END       , KC_PGDN        , KC_NUM,
+        KC_TRNS        , KC_TRNS     , KC_TRNS     , KC_TRNS
+
+    ),
+    [_ADJUST]     = LAYOUT_split_3x5_2(
+        KC_PSCR        , KC_F7        , KC_F8        , KC_F9        , KC_F10,           KC_ENT , KC_INS , KC_HOME, KC_PGUP, DB_TOGG,
+        LGUI_T(KC_SCRL), LALT_T(KC_F4), LCTL_T(KC_F5), LSFT_T(KC_F6), KC_F11,           KC_BSPC, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI,
+        KC_PAUS        , KC_F1        , KC_F2        , KC_F3        , KC_F12,           KC_ESC , KC_DEL , KC_END , KC_PGDN, QK_BOOT,
+        KC_TRNS        , KC_TRNS      , KC_TRNS      , KC_TRNS
+    ),
+    [_SYMBOLS]    = LAYOUT_split_3x5_2(
+        KC_SLSH, KC_AMPR, KC_ASTR, KC_TILD, KC_DQUO,            KC_PIPE, KC_COLN, KC_ASTR, KC_SCLN, KC_QUES,
+        KC_SCLN, KC_COLN, KC_EQL , KC_MINS, KC_QUOT,            KC_BSLS, KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC,
+        KC_LT  , KC_GT  , KC_PPLS, KC_UNDS, KC_GRV ,            KC_SLSH, KC_LT  , KC_GT  , KC_LCBR, KC_RCBR,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+    [_MULTIMEDIA] = LAYOUT_split_3x5_2(
+        KC_SCRL, KC_NUM , KC_BRIU, KC_BRID, KC_CAPS,            KC_CAPS, KC_BRID, KC_BRIU, KC_NUM , KC_SCRL,
+        KC_MPLY, KC_MNXT, KC_VOLU, KC_VOLD, KC_MPRV,            KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MPLY,
+        KC_EXEC, KC_HELP, KC_PAUS, KC_MUTE, KC_MSTP,            KC_MSTP, KC_MUTE, KC_PAUS, KC_HELP, KC_EXEC,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+    [_MOUSE]      = LAYOUT_split_3x5_2(
+        KC_BTN5       , KC_BTN2, KC_BTN3, KC_BTN1, KC_BTN4,     KC_BTN4, KC_BTN1, KC_BTN3, KC_BTN2, KC_BTN5,
+        KC_ACL0       , KC_MS_R, KC_MS_U, KC_MS_D, KC_MS_L,     KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_ACL0,
+        RESET_2_QWERTY, KC_WH_R, KC_WH_U, KC_WH_D, KC_WH_L,     KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, RESET_2_QWERTY,
+        KC_LOCK       , KC_ACL2, KC_ACL2, KC_LOCK
+    ),
 };
 
 const uint16_t PROGMEM sd_combo[] = {LALT_S, LCTL_D, COMBO_END};
@@ -219,25 +260,25 @@ combo_t key_combos[COMBO_COUNT] = {
     [UIOP_GAMING_LAYER] = COMBO(uiop_combo, TG(_GAMING)),
 
     // Experiments
-    [WS_GRV] = COMBO(ws_combo, KC_GRV),
-    [ED_TAB] = COMBO(ed_combo, KC_TAB),
-    [RF_CAPS] = COMBO(rf_combo, KC_CAPS),
-    [TG_MINS] = COMBO(tg_combo, KC_MINS),
+    [WS_APP] = COMBO(ws_combo, KC_APP),
+    [ED_BSLS] = COMBO(ed_combo, KC_BSLS),
+    [RF_MINS] = COMBO(rf_combo, KC_MINS),
+    [TG_PSCR] = COMBO(tg_combo, KC_PSCR),
 
-    [SX_APP] = COMBO(sx_combo, KC_APP),
-    [DC_BSLS] = COMBO(dc_combo, KC_BSLS),
-    [FV_DEL] = COMBO(fv_combo, KC_DEL),
-    [GB_QUOT] = COMBO(gb_combo, KC_QUOT),
+    [SX_GRV] = COMBO(sx_combo, KC_GRV),
+    [DC_TAB] = COMBO(dc_combo, KC_TAB),
+    [FV_QUOT] = COMBO(fv_combo, KC_QUOT),
+    [GB_DEL] = COMBO(gb_combo, KC_DEL),
 
-    [YH_EQL] = COMBO(yh_combo, KC_EQL),
-    [UJ_CAPS] = COMBO(uj_combo, KC_CAPS),
-    [IK_LBRC] = COMBO(ik_combo, KC_LBRC),
-    [OL_RBRC] = COMBO(ol_combo, KC_RBRC),
+    [YH_PSCR] = COMBO(yh_combo, KC_PSCR),
+    [UJ_EQL] = COMBO(uj_combo, KC_EQL),
+    [IK_BSLS] = COMBO(ik_combo, KC_BSLS),
+    [OL_APP] = COMBO(ol_combo, KC_APP),
 
-    [HN_QUOT] = COMBO(hn_combo, KC_QUOT),
-    [JM_BSPC] = COMBO(jm_combo, KC_BSPC),
-    [KCMM_BSLS] = COMBO(kcmm_combo, KC_BSLS),
-    [LDOT_APP] = COMBO(ldot_combo, KC_APP),
+    [HN_BSPC] = COMBO(hn_combo, KC_BSPC),
+    [JM_QUOT] = COMBO(jm_combo, KC_QUOT),
+    [KCMM_LBRC] = COMBO(kcmm_combo, KC_LBRC),
+    [LDOT_RBRC] = COMBO(ldot_combo, KC_RBRC),
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
