@@ -25,10 +25,15 @@ static void render_logo(void) {
 }
 
 enum layers {
-    _QWERTY = 0,
-    _LOWER,
-    _RAISE,
-    _ADJUST,
+  _QWERTY = 0,
+  _DVORAK = 1,
+  _COLEMAK = 2,
+  _LOWER = 3,
+  _RAISE = 4,
+  _ADJUST = 5,
+  _SYMBOLS = 6,
+  _MULTIMEDIA = 7,
+  _MOUSE = 8,
 };
 
 static void render_status(void) {
@@ -36,19 +41,30 @@ static void render_status(void) {
     oled_write_P(PSTR("Layer: "), false);
     switch (get_highest_layer(layer_state)) {
         case _QWERTY:
-            oled_write_P(PSTR("Default\n"), false);
+        case _DVORAK:
+        case _COLEMAK:
+            oled_write_P(PSTR("DEFAULT\n"), false);
             break;
         case _LOWER:
-            oled_write_P(PSTR("Lower\n"), false);
+            oled_write_P(PSTR("LOWER\n"), false);
             break;
         case _RAISE:
-            oled_write_P(PSTR("Raise\n"), false);
+            oled_write_P(PSTR("RAISE\n"), false);
             break;
         case _ADJUST:
-            oled_write_P(PSTR("Adjust\n"), false);
+            oled_write_P(PSTR("ADJUST\n"), false);
+            break;
+         case _SYMBOLS:
+            oled_write_P(PSTR("SYMBOLS\n"), false);
+            break;
+        case _MULTIMEDIA:
+            oled_write_P(PSTR("MULTIMEDIA\n"), false);
+            break;
+        case _MOUSE:
+            oled_write_P(PSTR("MOUSE\n"), false);
             break;
         default:
-            oled_write_P(PSTR("Undefined\n"), false);
+            oled_write_P(PSTR("UNDEFINED\n"), false);
     }
 
     // Host Keyboard LED Status
