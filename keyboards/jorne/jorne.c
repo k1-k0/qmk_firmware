@@ -31,9 +31,8 @@ enum layers {
   _LOWER = 3,
   _RAISE = 4,
   _ADJUST = 5,
-  _SYMBOLS = 6,
-  _MULTIMEDIA = 7,
-  _MOUSE = 8,
+  _MULTIMEDIA = 6,
+  _MOUSE = 7,
 };
 
 static void render_status(void) {
@@ -53,9 +52,6 @@ static void render_status(void) {
             break;
         case _ADJUST:
             oled_write_P(PSTR("ADJUST\n"), false);
-            break;
-         case _SYMBOLS:
-            oled_write_P(PSTR("SYMBOLS\n"), false);
             break;
         case _MULTIMEDIA:
             oled_write_P(PSTR("MULTIMEDIA\n"), false);
