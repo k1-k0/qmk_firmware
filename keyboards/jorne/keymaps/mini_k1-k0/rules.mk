@@ -1,3 +1,4 @@
 COMBO_ENABLE = yes
 KEY_LOCK_ENABLE = yes
+CAPS_WORD_ENABLE = yes
 DEBOUNCE_TYPE = sym_defer_pk

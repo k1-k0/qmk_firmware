@@ -20,13 +20,14 @@ enum combos {
   ER_LBRC,
   WE_GRV,
   CV_BSLS,
+  AS_CAPS_WORD,
 
   JK_QUOT,
   KL_CAPS,
   UI_RBRC,
   IO_GRV,
   MCMM_BSLS,
-  GH_MOUSE_LAYER,
+  LSCLN_CAPS_WORD,
 
   // DVORAK
   OE_CAPS,
@@ -34,13 +35,14 @@ enum combos {
   DOTP_LBRC,
   CMMDOT_GRV,
   JK_BSLS,
+  AO_CAPS_WORD,
 
   HT_QUOT,
   TN_CAPS,
   GC_RBRC,
   CR_GRV,
   MW_BSLS,
-  ID_MOUSE_LAYER,
+  NS_CAPS_WORD,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -60,13 +62,14 @@ const uint16_t PROGMEM q_df_combo[] = {LCTL_T(KC_D), LSFT_T(KC_F), COMBO_END};
 const uint16_t PROGMEM q_er_combo[] = {KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM q_we_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM q_cv_combo[] = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM q_as_combo[] = {LGUI_T(KC_A), LALT_T(KC_S), COMBO_END};
 
 const uint16_t PROGMEM q_jk_combo[] = {RSFT_T(KC_J), RCTL_T(KC_K), COMBO_END};
 const uint16_t PROGMEM q_kl_combo[] = {RCTL_T(KC_K), RALT_T(KC_L), COMBO_END};
 const uint16_t PROGMEM q_ui_combo[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM q_io_combo[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM q_mcmm_combo[] = {KC_M, KC_COMM, COMBO_END};
-const uint16_t PROGMEM q_gh_combo[] = {KC_G, KC_H, COMBO_END};
+const uint16_t PROGMEM q_lscln_combo[] = {RALT_T(KC_L), RGUI_T(KC_SCLN), COMBO_END};
 
 // DVORAK
 const uint16_t PROGMEM d_oe_combo[] = {LALT_T(KC_O), LCTL_T(KC_E), COMBO_END};
@@ -74,13 +77,14 @@ const uint16_t PROGMEM d_eu_combo[] = {LCTL_T(KC_E), LSFT_T(KC_U), COMBO_END};
 const uint16_t PROGMEM d_dotp_combo[] = {KC_DOT, KC_P, COMBO_END};
 const uint16_t PROGMEM d_cmmdot_combo[] = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM d_jk_combo[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM d_ao_combo[] = {LGUI_T(KC_A), LALT_T(KC_O), COMBO_END};
 
 const uint16_t PROGMEM d_ht_combo[] = {RSFT_T(KC_H), RCTL_T(KC_T), COMBO_END};
 const uint16_t PROGMEM d_tn_combo[] = {RCTL_T(KC_T), RALT_T(KC_N), COMBO_END};
 const uint16_t PROGMEM d_gc_combo[] = {KC_G, KC_C, COMBO_END};
 const uint16_t PROGMEM d_cr_combo[] = {KC_C, KC_R, COMBO_END};
 const uint16_t PROGMEM d_mw_combo[] = {KC_M, KC_W, COMBO_END};
-const uint16_t PROGMEM d_id_combo[] = {KC_I, KC_D, COMBO_END};
+const uint16_t PROGMEM d_ns_combo[] = {RALT_T(KC_N), RGUI_T(KC_S), COMBO_END};
 
 
 combo_t key_combos[COMBO_COUNT] = {
@@ -90,13 +94,14 @@ combo_t key_combos[COMBO_COUNT] = {
   [ER_LBRC] = COMBO(q_er_combo, KC_LBRC),
   [WE_GRV] = COMBO(q_we_combo, KC_GRV),
   [CV_BSLS] = COMBO(q_cv_combo, KC_BSLS),
+  [AS_CAPS_WORD] = COMBO(q_as_combo, CW_TOGG),
 
   [JK_QUOT] = COMBO(q_jk_combo, KC_QUOT),
   [KL_CAPS] = COMBO(q_kl_combo, KC_CAPS),
   [UI_RBRC] = COMBO(q_ui_combo, KC_RBRC),
   [IO_GRV] = COMBO(q_io_combo, KC_GRV),
   [MCMM_BSLS] = COMBO(q_mcmm_combo, KC_BSLS),
-  [GH_MOUSE_LAYER] = COMBO(q_gh_combo, DF(_MOUSE)),
+  [LSCLN_CAPS_WORD] = COMBO(q_lscln_combo, CW_TOGG),
 
   // DVORAK
   [OE_CAPS] = COMBO(d_oe_combo, KC_CAPS),
@@ -104,11 +109,12 @@ combo_t key_combos[COMBO_COUNT] = {
   [DOTP_LBRC] = COMBO(d_dotp_combo, KC_LBRC),
   [CMMDOT_GRV] = COMBO(d_cmmdot_combo, KC_GRV),
   [JK_BSLS] = COMBO(d_jk_combo, KC_BSLS),
+  [AO_CAPS_WORD] = COMBO(d_ao_combo, CW_TOGG),
 
   [HT_QUOT] = COMBO(d_ht_combo, KC_QUOT),
   [TN_CAPS] = COMBO(d_tn_combo, KC_CAPS),
   [GC_RBRC] = COMBO(d_gc_combo, KC_RBRC),
   [CR_GRV] = COMBO(d_cr_combo, KC_GRV),
   [MW_BSLS] = COMBO(d_mw_combo, KC_BSLS),
-  [ID_MOUSE_LAYER] = COMBO(d_id_combo, DF(_MOUSE)),
+  [NS_CAPS_WORD] = COMBO(d_ns_combo, CW_TOGG),
 };

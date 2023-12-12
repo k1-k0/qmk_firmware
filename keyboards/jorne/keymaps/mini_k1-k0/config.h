@@ -33,4 +33,4 @@
 
 // Combo settings
 #define COMBO_TERM  20
-#define COMBO_COUNT 22
+#define COMBO_COUNT 24
