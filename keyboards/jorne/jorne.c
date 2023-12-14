@@ -27,12 +27,10 @@ static void render_logo(void) {
 enum layers {
   _QWERTY = 0,
   _DVORAK = 1,
-  _COLEMAK = 2,
-  _LOWER = 3,
-  _RAISE = 4,
-  _ADJUST = 5,
-  _MULTIMEDIA = 6,
-  _MOUSE = 7,
+  _LOWER = 2,
+  _RAISE = 3,
+  _ADJUST = 4,
+  _MOUSE = 5,
 };
 
 static void render_status(void) {
@@ -41,7 +39,6 @@ static void render_status(void) {
     switch (get_highest_layer(layer_state)) {
         case _QWERTY:
         case _DVORAK:
-        case _COLEMAK:
             oled_write_P(PSTR("DEFAULT\n"), false);
             break;
         case _LOWER:
@@ -52,9 +49,6 @@ static void render_status(void) {
             break;
         case _ADJUST:
             oled_write_P(PSTR("ADJUST\n"), false);
-            break;
-        case _MULTIMEDIA:
-            oled_write_P(PSTR("MULTIMEDIA\n"), false);
             break;
         case _MOUSE:
             oled_write_P(PSTR("MOUSE\n"), false);
