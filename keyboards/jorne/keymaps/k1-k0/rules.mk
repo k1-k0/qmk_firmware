@@ -1,0 +1,3 @@
+CAPS_WORD_ENABLE = yes
+REPEAT_KEY_ENABLE = yes
+DEBOUNCE_TYPE = sym_defer_pk
