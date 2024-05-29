@@ -39,13 +39,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Pick good defaults for enabling homerow modifiers
 #define TAPPING_TERM 200
 #define PERMISSIVE_HOLD
-#define IGNORE_MOD_TAP_INTERRUPT
-#define TAPPING_FORCE_HOLD
+#define QUICK_TAP_TERM 0
 // #define RETRO_TAPPING
 
 // Combo settings
 #define COMBO_TERM 20
-#define COMBO_COUNT 40
+#define COMBO_COUNT 34
 
 // Underglow configuration
 #ifdef RGBLIGHT_ENABLE
