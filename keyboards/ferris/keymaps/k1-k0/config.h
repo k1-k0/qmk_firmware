@@ -33,6 +33,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // The default is 40
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 100
 
+// Debounce
+#define DEBOUNCE 2
+
 // Split
 #define EE_HANDS
 
@@ -44,7 +47,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Combo settings
 #define COMBO_TERM 20
-#define COMBO_COUNT 34
+#define COMBO_COUNT 36
 
 // Underglow configuration
 #ifdef RGBLIGHT_ENABLE
